@@ -1,0 +1,31 @@
+{% extends 'todo/base.html' %}
+{% block title %} Выполненные задачи {% endblock %}
+{% block content %}
+<h1>Выполненные задачи</h1>
+{% if datas != 'На даннный момент у Вас нет выполненных задач.' %}
+ {% for  data in  datas %}
+   <div class="todos">
+       <div class="div_link_completed_todos">
+       {% if data.important %}
+
+            <a class="link_todos_important" href="{% url 'detail_todo' data.id %}">{{ data.title }}</a>
+        {% else %}
+            <a class="link_todos" href="{% url 'detail_todo' data.id %}">{{ data.title }}
+        {% endif %}
+                </a>
+        <p class="completed_todo">Дата выполнения: {{data.deadline}}</p>
+
+       </div>
+   </div>
+    {% endfor %}
+{% else %}
+
+<div class="info_link_todos">
+       <p class="ddd">{{datas}}</p>
+
+<a href="{% url 'create_todo' %}">Создать</a>
+</div>
+
+
+{% endif %}
+{% endblock %}

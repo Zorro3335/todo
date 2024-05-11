@@ -1,0 +1,246 @@
+body{
+font-family: 'Dosis', sans-serif;
+    background-color:  #20D698;
+}
+.inputs{
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    background-color: #20D4D6;
+}
+
+.navigation img{
+    margin-left: 20px;
+
+    width: 30px;
+    height: 30px;
+}
+.navigation ul{
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.navigation a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+.navigation ul li{
+    margin-left: 20px;
+    list-style: none;
+}
+
+.navigation ul li a{
+    text-decoration: none;;
+}
+
+.navigation p{
+    margin-left: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    font-weight: bold;
+    font-size: 20px;
+    align-items: center;
+}
+
+.you_welcome{
+    margin-top: 29px;
+    display: flex;
+    font-size: 30px;
+    font-weight:600;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.you_welcome a{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight:600;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    background-color:rgb(70, 144, 255);
+}
+.you_welcome p{
+    display: flex;
+    justify-content: center;
+}
+.inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs button {
+    display: flex;
+    justify-content: center;
+    background-color: #00eeff6e;
+}
+
+.info_link_todos{
+    flex-direction: column;
+    display: flex;
+    width: 200px;
+}
+
+.info_link_todos a{
+    display: flex;
+    width: 100%;
+}
+
+.ddd{
+    color: red;
+}
+.todos{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.div_link_todos{
+    display: flex;
+    width: 200px;
+}
+.link_todos_important{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #ff00007a;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.link_todos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.div_link_todos p{
+    display: flex;
+}
+
+.div_link_completed_todos{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.div_link_completed_todos .link_todos_important{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    background-color: #ff00007a;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.div_link_completed_todos .link_todos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    background-color: antiquewhite;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.div_link_completed_todos .div_link_todos p{
+    display: flex;
+}
+
+.div_link_completed_todos .completed_todo{
+    display: flex;
+    padding: 10px;
+    background-color: #00ff667a;
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    margin-top: 0;
+}
+.div_create_todo{
+    display: flex;
+    justify-content: center;
+}
+.create_todo{
+
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+}
+
+.create_todo input{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.create_todo textarea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.important{
+    display: flex;
+    justify-content: left;
+}
+.buttons{
+    margin-top: 10px;
+display: flex;
+    justify-content: center;
+}
+.save{
+    margin-left: 10px;
+    background-color: #20D4D6;
+    font-size: 14px;
+    padding: 10px 5px;
+    border-radius: 30px;
+}
+
+.completed{
+    margin-left: 10px;
+    background-color: green;
+    font-size: 14px;
+    padding: 10px 5px;
+    border-radius: 30px;
+}
+
+.delete{
+    margin-left: 10px;
+    background-color: red;
+    font-size: 14px;
+    padding: 10px 5px;
+    border-radius: 30px;
+}
+
+.display_none{
+    display: none;
+}
+
+.p {
+    display: flex;
+}
