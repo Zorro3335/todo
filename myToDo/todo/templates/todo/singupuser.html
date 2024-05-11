@@ -1,0 +1,18 @@
+{% extends 'todo/base.html' %}
+{% block title %} Регистрация {% endblock %}
+{% block content %}
+
+{{ error }}
+<div class="inputs">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form_user.as_p }}
+        <p class="no_account">Есть аккаунт? <a href="{% url 'login_user' %}">Войти</a></p>
+        <button type="submit">Регистация</button>
+
+    </form>
+</div>
+
+
+{% endblock %}
+

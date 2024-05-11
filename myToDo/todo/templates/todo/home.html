@@ -1,0 +1,25 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<div class="you_welcome">
+    {% if not user.is_authenticated%}
+        <p>Добро пожаловать на наш сайт для заметок! </p>
+
+        <p>Поскольку Вы не вошли в систему, войдите пожалуйста!</p>
+        <a href="{% url 'login_user' %}">Вход</a>
+
+        {% else %}
+    <div class="info_link_todos">
+        <p>Выберите</p>
+        <a href="{% url 'current_todos' %}">Мои активные записи</a>
+        <a href="{% url 'completed_todo' %}">Мои выполненные записи</a>
+        <a href="{% url 'create_todo' %}">Создать запись</a>
+
+
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

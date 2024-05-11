@@ -1,0 +1,37 @@
+{% extends 'todo/base.html' %}
+{% block title %} {{ todo.title }} {% endblock %}
+{% block content %}
+<h1>{{ error }}</h1>
+<form method="POST">
+    <div class="div_create_todo">
+        <div class="create_todo">
+            {% csrf_token %}
+            <p>Дата создания: {{todo.create_date }}</p>
+            <p >Заголовок {{detail_todo.title}}</p>
+            <p >Описание задачи {{detail_todo.description}}</p>
+             <p class="p">Важно {{detail_todo.important}}</p>
+                <div class="buttons">
+                    {% if todo.deadline is None %}
+
+                    <button type="submit" class="save">Соxранить изменения</button>
+                </div>
+        </div>
+    </div>
+</form>
+<div class="buttons">
+                    <form method="POST" action="{% url 'completed_todo_to' todo.id %}">
+                    {% csrf_token %}
+
+                    <button type="submit" class="completed">Выполнено</button>
+
+                    </form>
+                    {% endif %}
+                    <form method="POST" action="{% url 'delete_todo' todo.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="delete">Удалить</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+
+{% endblock %}

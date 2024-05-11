@@ -1,0 +1,34 @@
+{% extends 'todo/base.html' %}
+{% block title %} Задачи {% endblock %}
+
+{% block content %}
+{% if datas != 'На даннный момент у Вас нет активных задач. Хотите создать?' %}
+    {% for  data in  datas %}
+        <div class="todos">
+            <div class="div_link_todos">
+                {% if data.deadline is None %}
+                {% if data.important %}
+
+                <a class="link_todos_important" href="{% url 'detail_todo' data.id %}">{{ data.title }}</a>
+            {% else %}
+                <a class="link_todos" href="{% url 'detail_todo' data.id %}">
+                    {{ data.title  }}</a>
+            {% endif %}
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+{% else %}
+
+<div class="info_link_todos">
+       <p class="ddd">{{datas}}</p>
+
+<a href="{% url 'create_todo' %}">Создать</a>
+</div>
+
+
+{% endif %}
+{% endblock %}

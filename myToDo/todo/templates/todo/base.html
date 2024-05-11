@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Главная страница {% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'todo/todo_style.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+    <nav class="navigation">
+        <img src="{% static 'todo/img/tick_21077.png' %}" alt="">
+        <p><a href="{% url 'home' %}">Заметки</a></p>
+        {% block nav %}
+        {% if user.is_authenticated%}
+            <ul>
+                <li><a href="{% url 'completed_todo' %}">Выполненные</a></li>
+                <li><a href="{% url 'current_todos' %}">Задачи</a></li>
+                <li><a href="{% url 'create_todo' %}">Создать</a></li>
+                <li><a href="{% url 'logout_user' %}">Выход</a></li>
+            </ul>
+
+        {% else %}
+            <ul>
+                <li><a href="{% url 'singupuser' %}">Зарегестрироваться</a></li>
+                <li><a href="{% url 'login_user' %}">Войти</a></li>
+            </ul>
+        {% endif %}
+        {% endblock %}
+    </nav>
+
+
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
