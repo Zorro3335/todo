@@ -3,13 +3,11 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import InternalError
 from django.contrib.auth import login, logout, authenticate
-from rest_framework.response import Response
-
 from .forms import ToDoForms
 from .models import ToDo
 from django.utils import timezone
-from .serializers import ToDoSerializer
-from rest_framework.decorators import APIView
+
+
 # Create your views here.
 
 
@@ -114,13 +112,3 @@ def logout_user(request):
         return redirect('home')
 
 
-class ToDoAPIView(APIView):
-    def get(self, request):
-        # Получаем набор всех записей из таблицы ToDo
-        queryset = ToDo.objects.all()
-        # Сериализуем извлечённый набор записей
-        serializer_for_queryset = ToDoSerializer(
-            instance=queryset,  # Передаём набор записей
-            many=True  # Указываем, что на вход подаётся именно набор записей
-        )
-        return Response(serializer_for_queryset.data)

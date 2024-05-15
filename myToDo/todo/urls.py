@@ -1,7 +1,9 @@
 
 from django.urls import path, include
 from . import views
-from .views import ToDoAPIView
+from .api import (ToDoAPIViewList, ToDoAPIViewCreate, ToDoAPIViewDetailOrPut,
+                  UserAPIViewDetailOrPutOrDelete, UserAPIViewCreate, UserAPIViewList,
+                  CheckPassword)
 
 
 
@@ -21,7 +23,14 @@ urlpatterns = [
     path('<int:id_todo>/delete', views.delete_todo, name='delete_todo'),
     path('<int:id_todo>/save', views.save_todo, name='save_todo'),
 
-    # API
-    path('api/todos/', ToDoAPIView.as_view(), name='todos')
+    # ы
+    path('api/todos/', ToDoAPIViewList.as_view(), name='todos'),
+    path('api/todo/<int:pk>/', ToDoAPIViewDetailOrPut.as_view(), name='todo_detail'),
+    path('api/create_todo/', ToDoAPIViewCreate.as_view(), name='create_todo'),
+    path('api/users/', UserAPIViewList.as_view(), name='users'),
+    path('api/user/<int:pk>/', UserAPIViewDetailOrPutOrDelete.as_view(), name='user_detail'),
+    path('api/create_user/', UserAPIViewCreate.as_view(), name='create_user'),
+    path('api/check_password/', CheckPassword.as_view(), name='check_password')
+
 
 ]
